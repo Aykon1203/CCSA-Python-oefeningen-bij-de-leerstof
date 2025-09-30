@@ -2,6 +2,7 @@ def zoek_binair(rij,getal):
   links=0
   rechts=len(rij)-1
   while links!=rechts:
+    print(f'{links}, {rechts}')
     midden = (links+rechts)//2 #doet zelfde als floor(), maar zonder import
     if rij[midden]<getal: #getal = te zoeken item in de array
       links = midden+1 #zoeken in rechterhelft
