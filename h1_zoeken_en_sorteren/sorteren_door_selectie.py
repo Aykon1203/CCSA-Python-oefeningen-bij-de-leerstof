@@ -1,5 +1,16 @@
 def selection_sort_vooraan(rij):
-    pass
+    n=len(rij)
+    for i in range(0,n-1):
+        min=rij[i]
+        min_pos=i
+        for j in range(i+1,n):
+            if rij[j]<min:
+                #nieuw min gevonden
+                min=rij[j]
+                min_pos=j
+            #min achteraan plaatsen
+        rij[i],rij[min_pos]=min,rij[i]
+        print(rij)
 
 def selection_sort(rij):
     n=len(rij)
@@ -17,6 +28,6 @@ def selection_sort(rij):
 
 
 a = [int(_) for _ in input().split()]
-selection_sort(a)
+selection_sort_vooraan(a)
 # selection_sort_vooraan(a)
 

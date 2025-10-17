@@ -2,24 +2,35 @@ class StackList:
 
     class Knoop:
         def __init__(self, data=None, volgende=None):
-            pass
+            self.data=data
+            self.volgende=volgende
 
     def __init__(self):
-        pass
+        self.top=None;
 
     def is_empty(self):
-        pass
+        return self.top is None;
 
     def push(self, data):
-        pass
+        nieuwe=StackList.Knoop()
+        nieuwe.data=data
+        nieuwe.volgende=self.top
+        self.top=nieuwe
 
     def peek(self):
-        pass
+        return self.top.data
 
     def pop(self):
-        pass
+        x = self.top.data #data van top opslaan
+        self.top=self.top.volgende # top verwijderen
+        return x
         
-
-
-
-    
+stapel1=StackList()
+print(stapel1.is_empty())
+stapel1.push(5)
+stapel1.push(1)
+stapel1.push(2)
+stapel1.push(3)
+print(stapel1.is_empty())
+print(stapel1.pop())
+print(stapel1.peek())
