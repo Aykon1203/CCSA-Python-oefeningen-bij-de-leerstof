@@ -11,16 +11,24 @@ class QueueList:
         self.staart = None
 
     def is_empty(self):
-        return self.kop is None
+        return self.kop is None and self.staart is None
 
     def enqueue(self,data):
-        self.staart = self.Knoop(data,self.staart)
-
+        nieuw = QueueList.Knoop()
+        if self.is_empty():
+            self.kop=self.staart=nieuw
+        self.staart.volgende = nieuw
+        self.staart = nieuw
+        
     def front(self):
-        pass
+        if self.is_empty():
+            return IndexError()
+        return self.kop.data
 
     def dequeue(self):
-        pass
-    
+        if self.is_empty():
+            return IndexError()
+        self.pop()
     def invert(self):
         pass
+
